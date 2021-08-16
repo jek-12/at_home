@@ -1057,6 +1057,13 @@ section .pagination a:after {
     padding-bottom: 100px; } }
 
 @media (max-width: 760px) {
+  header .for_shadow_all {
+    padding: 3px 41px 0 0; }
+  header .for_shadow {
+    margin-left: 0; }
+    header .for_shadow :last-child {
+      margin-right: 0;
+      padding-right: 60px; }
   header img {
     width: 98px;
     height: 30px; }
