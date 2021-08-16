@@ -1,0 +1,460 @@
+@import '../abstract/colors';
+@import "../abstract/font";
+@import "../abstract/mixins";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, active, hover, selected {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+}
+ol,ul {
+  list-style: none;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height:1000px;
+  background-color: #1883ba;
+}
+header {
+  max-height: 596px;
+  background-color: $header_bckg_c;
+  .disappearing_header {
+    transition: 1s;
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    top: 0;
+    padding-top: 57px;
+    background-color: $header_bckg_c;
+    .nav_box {
+      position: absolute;
+      left: 15px;
+      opacity: 0;
+      border-radius: 0;
+      height: 32px;
+      width: 0;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      transform: rotate(0deg);
+      transition: 1s;
+      span {
+        border-radius: 0;
+        margin-top: -1.2px;
+        display: block;
+        width: 0;
+        height: 32px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        transform: rotate(45deg);
+        transition: 1s;
+      }
+    }
+    .nav_box:hover {
+      transform: rotate(360deg);
+    }
+  }
+  .main_header {
+    display: flex;
+    position: relative;
+    padding: 0 39px 0 61px;
+    max-width: 1140px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    top: 0;
+    background-color: $header_bckg_c;
+    transition: 1s;
+    .for_nav {
+      z-index: 201;
+    }
+    .nav_bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 9.8px 7px 0 10.5px;
+      font-kerning: none;
+      letter-spacing: 0.12px;
+      .nav_bar_item {
+        font-family: titilliumweb_regular, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        list-style-type: none;
+        &:nth-child(2) {
+          letter-spacing: 0.24px;
+          padding-left: 0.8px;
+        }
+        &:nth-child(3) {
+          letter-spacing: 0.24px;
+        }
+        &:nth-child(4) {
+          letter-spacing: 0.16px;
+          padding-right: 1px;
+        }
+        &:nth-child(5) {
+          letter-spacing: -0.09px;
+        }
+        a {
+          display: inline-block;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: $header_nav_bar_items_c;
+        }
+
+      }
+    }
+  }
+  .for_shadow_all {
+    padding: 3px 100px 0 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    display: flex;
+  }
+  .for_shadow {
+    height: 33px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:-6px;
+    :last-child {
+      margin-right: -5px;
+    }
+  }
+  .for_shadow_l {
+    padding: 0;
+    height:40px;
+  }
+  .shadow {
+    visibility: hidden;
+    height:100%;
+    border-radius: 5px;
+    background-color: #643a79;
+    width: 77.5px;
+  }
+  .header_congratulatory_text {
+    padding-top: 228px;
+    width: 100%;
+  }
+  .menu_transform {
+    align-items: flex-end;
+  }
+  img {
+    width: 118px;
+    height: 37px;
+  }
+  .congratulatory_text {
+    padding-left: 36px;
+    font-kerning: none;
+    text-align: center;
+    font-family: titilliumweb_bold, sans-serif;
+    color: $header_congratulatory_text_c;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 49px;
+    font-weight: 400;
+    font-size: 42.2px;
+    :first-child {
+      margin-right: 5px;
+    }
+  }
+  .header_button {
+    padding-bottom: 205px;
+    width: 100%;
+    padding-left: 24px;
+    button {
+      position: relative;
+      bottom: -55px;
+      margin: 0 auto;
+      padding-left: 14px;
+      padding-top: 3px;
+      text-transform: uppercase;
+      font-family: titilliumweb_semibold, sans-serif;
+      text-align: center;
+      border-radius: 5px;
+      border: none;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.434px;
+      @include button(293px, 65px, $header_bckg_button_c, $header_button_c);
+      @include box-shadow(5px, #c86a40);
+    }
+  }
+
+}
+section {
+  .pagination {
+    position:fixed;
+    right:20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size:1.4em;
+    z-index: 10;
+  }
+  .pagination a {
+    display:block;
+    height:20px;
+    margin-bottom:5px;
+    color:white;
+    position:relative;
+    padding:4px;
+  }
+  .pagination a.active:after {
+    box-shadow:inset 0 0 0 5px;
+  }
+  .pagination a .hover-text {
+    position:absolute;
+    right:15px;
+    top:7px;
+    opacity:0;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    padding-right: 15px;
+  }
+  .pagination a:hover .hover-text {
+    opacity: 1;
+  }
+  .pagination a:after {
+    -webkit-transition:box-shadow 0.5s ease;
+    transition:box-shadow 0.5s ease;
+    width:10px;
+    height:10px;
+    display: block;
+    border:1px solid;
+    border-radius:50%;
+    content:'';
+    position: absolute;
+    margin:auto;
+    top:0;
+    right:4px;
+    bottom:0;
+  }
+
+}
+@media (max-width: 933px) {
+  header {
+    .header_congratulatory_text {
+      padding-top: 160px;
+    }
+    .header_button {
+      padding-bottom: 100px;
+    }
+  }
+}
+@media (max-width: 760px){
+  header {
+    img {
+      width: 98px;
+      height: 30px;
+    }
+    .disappearing_header {
+      padding-top: 30px;
+      .main_header {
+        padding: 0 21px 0 21px;
+      }
+    }
+    .header_congratulatory_text {
+      padding-top: 120px;//90
+    }
+    .congratulatory_text {
+      font-size: 35px;
+
+    }
+    .header_button {
+      padding-bottom: 100px;
+      button {
+        font-size: 16px;
+        @include button(233px, 55px, $header_bckg_button_c, $header_button_c);
+      }
+    }
+
+  }//menu nukatu!
+}
+@media (max-width: 450px) {
+  header {
+    .header_congratulatory_text {
+      padding-top: 90px;//90
+    }
+  }
+}
+//create_menu
+
+
+//.margin_l_r {
+//  margin-right:0;
+//  margin-left:0;
+//}
+//
+//header {
+//  width: 100%;
+//  background-color: $header_bckg_c;
+//  .row {
+//    @extend .margin_l_r;
+//  }
+//  .header_menu {
+//    max-width: 1140px;
+//    margin: 0 auto;
+//    .first_row {
+//      padding: 57px 48px 129.5px 48px;
+//    }
+//  }
+//  .nav_box {
+//    display: none;
+//    float:right;
+//    margin-right: 200px;
+//    opacity: 0;
+//    border-radius: 6%;
+//    width: 0;
+//    height: 32px;
+//    border-top: 1px solid white;
+//    border-bottom: 1px solid white;
+//    transform: rotate(0deg);
+//    transition: 0.5s;
+//    span {
+//        border-radius: 5%;
+//        margin-top: -1.2px;
+//        display: block;
+//        width: 0;
+//        height: 32px;
+//        border-top: 1px solid white;
+//        border-bottom: 1px solid white;
+//        transform: rotate(45deg);
+//        transition: 0.5s;
+//      }
+//    }
+//  .nav_box:hover {
+//    transform: rotate(180deg);
+//  }
+//  .nav_box div{
+//      height: 5px;
+//      width: 5px;
+//      background-color: #00b3ff;
+//  }
+//  .for_nav {
+//    padding-right: 0;
+//    padding-left: 21px;
+//
+//  }
+//  .nav_bar {
+//
+//    display: flex;
+//    justify-content: space-between;
+//    padding-left: 0;
+//    padding-top: 9.8px;
+//    letter-spacing: 0.108px;
+//    .nav_bar_item {
+//      transition: .2s;
+//      opacity: 1;
+//      font-family: titilliumweb_regular, sans-serif;
+//      font-weight: 400;
+//      font-size: 16px;
+//      line-height: 18px;
+//      list-style-type: none;
+//      &:first-child {
+//        letter-spacing: 0.24px;
+//      };
+//      &:last-child {
+//        letter-spacing: 0.108px;
+//        margin-right: -2.2px;
+//      }
+//      a {
+//        display: inline-block;
+//        text-transform: uppercase;
+//        text-decoration: none;
+//        color: $header_nav_bar_items_c;
+//      }
+//    }
+//  }
+//  .menu_transform {
+//    align-items: flex-end;
+//  }
+//  img {
+//    width: 118px;
+//    height: 37px;
+//    margin-left: 1px;
+//  }
+//  .congratulatory_text {
+//    text-align: center;
+//    font-family: titilliumweb_bold, sans-serif;
+//    color: $header_congratulatory_text_c;
+//    font-style: normal;
+//    letter-spacing: 0;
+//    line-height: 49px;
+//    font-weight: 400;
+//    font-size: 42.2px;
+//    :first-child {
+//      margin-right: 10px;
+//    }
+//  }
+//  .header_button {
+//    padding-bottom: 205px;
+//    button {
+//      position: relative;
+//      bottom: -57px;
+//      margin: 0 auto;
+//      padding-left: 15px;
+//      text-transform: uppercase;
+//      font-family: titilliumweb_semibold, sans-serif;
+//      text-align: center;
+//      border-radius: 5px;
+//      border: none;
+//      font-size: 18px;
+//      font-weight: 400;
+//      letter-spacing: 0.434px;
+//      @include button(293px, 65px, $header_bckg_button_c, $header_button_c);
+//      @include box-shadow(5px, #c86a40);
+//    }
+//  }
+//}
+//@media (max-width: 933px){
+//  header {
+//    .header_menu {
+//      .first_row {
+//        padding: 57px 48px 80px 48px;
+//      }
+//    }
+//    .congratulatory_text {
+//      padding: 0 50px;
+//    }
+//    .header_button {
+//      padding-bottom: 100px;
+//    }
+//  }
+//}
+//@media (max-width: 760px){
+//  header {
+//    .header_menu {
+//      .first_row {
+//        padding: 37px 28px 80px 18px;
+//      }
+//    }
+//    .congratulatory_text {
+//      font-size: 35px;
+//    }
+//    .header_button {
+//      padding-bottom: 100px;
+//      button {
+//        font-size: 16px;
+//        @include button(233px, 55px, $header_bckg_button_c, $header_button_c);
+//      }
+//    }
+//  }
+//}
