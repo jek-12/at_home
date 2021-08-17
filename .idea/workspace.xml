@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/menu_animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/menu_animation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_header.scss" afterDir="false" />
     </list>
@@ -41,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629096271059</updated>
       <workItem from="1629096286460" duration="27033000" />
+      <workItem from="1629180352034" duration="34853000" />
     </task>
     <servers />
   </component>
@@ -57,6 +60,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

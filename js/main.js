@@ -13,49 +13,43 @@ $.scrollify({
     updateHash: true,//
     touchScroll:true,
     before:function(i,panels) {
-        var ref = panels[i].attr("data-section-name");
+        let ref = panels[i].attr("data-section-name");
 
         $(".pagination .active").removeClass("active");
 
         $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
 
     },
-    after:function() {
+    after: function() {
+        console.log(swap);
     if(swap === 0) {
         let nav_menu_icon = $(".nav_box");
         let nav_menu_inside = $(".nav_box span");
-        nav_menu_icon.animate({
-            opacity: "1",
-            width: "15px",
-        }, 1000);
-
-        nav_menu_inside.animate({
-            opacity: "1",
-            width: "15px",
-        }, 1000);
-        setTimeout(function () {
-            nav_menu_icon.css("border-radius", "50%");
-            nav_menu_inside.css("border-radius", "50%");
-            nav_menu_icon.css("transform", "rotate(180deg)");
-            nav_menu_inside.css("transform", "rotate(225deg)");
-        }, 1000);
-        $(nav_menu_icon).mouseenter(() => $(nav_menu_icon).css("transform", "rotate(360deg)"));
-        $(nav_menu_icon).mouseleave(() => $(nav_menu_icon).css("transform", "rotate(180deg)"));
-
+        anim(nav_menu_icon);
+        anim(nav_menu_inside);
+        anim_border(nav_menu_icon, nav_menu_inside);
 
         let menu = $(".disappearing_header");
         menu.css("width", "0%");
         $(".main_header").css("opacity", "0")
-        setTimeout(() => $(".main_header").css("visibility", "collapse"), 500);
+
+        menu.mouseleave(function () {
+            nav_menu_icon.css("transform", "rotate(180deg)");
+            menu.css("width", "0%");
+            $(".main_header").css("opacity", "0");
+            });
         swap++;
     }
+
+
+
 
 
     },
     afterResize:function() {},
     afterRender:function() {
-        var pagination = "<ul class=\"pagination\">";
-        var activeClass = "";
+        let pagination = "<ul class=\"pagination\">";
+        let activeClass = "";
         $(".panel").each(function (i) {
             activeClass = "";
             if (i === $.scrollify.currentIndex()) {
@@ -71,7 +65,20 @@ $.scrollify({
         //
     }
 });
-
+function anim(for_what) {
+    for_what.animate({
+        opacity: "1",
+        width: "15px",
+    }, 500);
+}
+function anim_border (box, span) {
+    setTimeout(function () {
+        box.css("border-radius", "50%");
+        box.css("transform", "rotate(180deg)");
+        span.css("border-radius", "50%");
+        span.css("transform", "rotate(225deg)");
+    }, 500);
+}
 
 //почитай за скрол перекидує до наступної секції і плавно вилізає панель після наступного скролу ховається і знову вилізає коллбек на скролл
     // $('header').on('scroll', function() {
