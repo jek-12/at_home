@@ -8,6 +8,7 @@
     <meta name = "author" content = "jek-12">
     <title>maket_6</title>
     <link rel = "stylesheet" href = "css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
     <script>
@@ -37,10 +38,10 @@
                 <div class = "col-xl-5 col-lg-6 col-7 for_nav">
                         <ul class = "nav_bar">
                             <li class = "nav_bar_item">
-                                <a href = "#">Home</a>
+                                <a href = "#home">Home</a>
                             </li>
                             <li class = "nav_bar_item">
-                                <a href = "#">About</a>
+                                <a href = "#second">About</a>
                             </li>
                             <li class = "nav_bar_item">
                                 <a href = "#">Work</a>
@@ -91,53 +92,129 @@
         <li><a class="" href="#fourth"><span class="hover-text">Fourth</span></a></li>
     </ul>
     <div class = "service_section">
-
             <div class = "headline_1">
                 SERVICES WE PROVIDE
             </div>
             <div class = "line">
             </div>
-<!--            <div class = "underline_text">-->
-<!--                <span>We are working with both individuals and businesses from all over the globe</span></br>-->
-<!--                <span>to create awesome websites and applications.</span>-->
-<!--            </div>-->
         <div class = "container">
             <div class = "col-12  underline_text">
-                <span>We are working with both individuals and businesses from all over the globe</span></br>
+                <span>We are working with both individuals and businesses from all over the globe</span><br>
                 <span>to create awesome websites and applications.</span>
             </div>
-            <div class = "row for_service_cards">
-                <div class = "col-3 service_cards">
-                    <img src="images/flag.png" alt="flag_icon"><!--h/w-->
-                    <span>Branding</span>
-                    <span>Lorem ipsum dolor sit amet,</br>consectetuer adipiscing elit,</br> sed diam nonummy nibh.</span>
+            <div class = "row ">
+                <div class="swiper-container service_slider">
+                    <div class="swiper-wrapper for_service_cards">
+                        <div class="swiper-slide">
+                            <div class = "col-3 service_cards">
+                                <img src="images/flag.png" alt="flag_icon"><!--h/w-->
+                                <span>Branding</span>
+                                <span>Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit,<br> sed diam nonummy nibh.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "col-3 service_cards">
+                                <img src="images/pencil.png" alt="pencile_icon"><!--h/w-->
+                                <span>Design</span>
+                                <span>Sed ut perspiciatis unde<br> omnis iste natus error sit<br> voluptatem</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "col-3 service_cards">
+                                <img src="images/circle.png" alt="circle_icon"><!--h/w-->
+                                <span>Development</span>
+                                <span>At vero eos et accusamus et<br> iusto odio dignissimos qui<br> blanditiis praesentium.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "col-3 service_cards">
+                                <img src="images/rocket.png" alt="rocket_icon"><!--h/w-->
+                                <span>ROCKET SCIENCE</span>
+                                <span>Et harum quidem rerum est<br> et expedita distinctio. Nam<br> libero tempore.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class = "col-3 service_cards">
-                    <img src="images/pencil.png" alt="pencile_icon"><!--h/w-->
-                    <span>Design</span>
-                    <span>Sed ut perspiciatis unde</br> omnis iste natus error sit</br> voluptatem</span>
-                </div>
-                <div class = "col-3 service_cards">
-                    <img src="images/circle.png" alt="circle_icon"><!--h/w-->
-                    <span>Development</span>
-                    <span>At vero eos et accusamus et</br> iusto odio dignissimos qui</br> blanditiis praesentium.</span>
-                </div>
-                <div class = "col-3 service_cards">
-                    <img src="images/rocket.png" alt="rocket_icon"><!--h/w-->
-                    <span>ROCKET SCIENCE</span>
-                    <span>Et harum quidem rerum est</br> et expedita distinctio. Nam</br> libero tempore.</span>
-                </div>
-
             </div>
         </div>
-    </div>
+    <div class="swiper-pagination"></div>
+</div>
 </section>
-<section class = "scroll " style = "height: 900px; background-color: white;" data-section-name="third">
-
+<section class = "scroll " data-section-name="third">
+    <div class = "team">
+        <div class = "headline_1">
+            MEET OUR BEAUTIFUL TEAM
+        </div>
+        <div class = "line">
+        </div>
+        <div class = "container">
+            <div class = "col-12  underline_text">
+                <span>We are a small team of designers and developers, who help brands with big ideas.</span>
+            </div>
+            <div class = "row ">
+                <div class="swiper-container team_slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class = "col-3 team_cards">
+                                <img src="images/team_img.jpg" alt="teammates">
+                                <span>ANNE HATHAWAY</span>
+                                <span>CEO / Marketing Guru</span>
+                                <span>Lorem ipsum dolor sit amet,<br>
+                                    consectetuer adipiscing elit,<br>
+                                    sed diam nonummy nibh<br>
+                                    euismod tincidunt ut laoreet<br>
+                                    dolore magna.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "col-3 team_cards">
+                                <img src="images/team_img.jpg" alt="teammates">
+                                <span>Kate Upton</span>
+                                <span>Creative Director</span>
+                                <span>Duis aute irure dolor in in<br>
+                                    voluptate velit esse cillum<br>
+                                    dolore fugiat nulla pariatur.<br>
+                                    Excepteur sint occaecat non<br>
+                                    diam proident.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "col-3 team_cards">
+                                <img src="images/team_img.jpg" alt="teammates">
+                                <span>Olivia Wilde</span>
+                                <span>Lead Designer</span>
+                                <span>Nemo enim ipsam voluptas<br>
+                                    sit aspernatur aut odit aut<br>
+                                    fugit, sed quia consequuntur<br>
+                                    magni dolores eos qui ratione<br>
+                                    voluptatem nesciunt.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "col-3 team_cards">
+                                <img src="images/team_img.jpg" alt="teammates">
+                                <span>Ashley Greene</span>
+                                <span>SEO / Developer</span>
+                                <span>Sed ut perspiciatis unde<br>
+                                    omnis iste natus error sit<br>
+                                    voluptatem accusantium<br>
+                                    doloremque laudantium,<br>
+                                    totam rem aperiam.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <div class="swiper-pagination"></div>-->
+    </div>
 </section>
 
 <script src = "js/main.js"></script>
 <script src = "js/shadow.js"></script>
 <script src = "js/menu_animation.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src = "js/slider.js"></script>
 </body>
 </html>

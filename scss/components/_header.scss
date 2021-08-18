@@ -310,64 +310,63 @@ section {
 //create_menu
 
 // 2 slide
-
+%before_line {
+  font-family: titilliumweb_semibold, sans-serif;
+  font-size: 39px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 117px 0 23px 3px;
+  width: max-content;
+  font-kerning: none;
+  letter-spacing: 3.82px;
+}
+%line {
+  width: 87px;
+  height: 4px;
+  opacity: 0.14;
+  background-color: #000000;
+  margin: 0 auto;
+}
+%after_line {
+  text-align: center;
+  font-family: titilliumweb_regular, sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: 0.35px;
+  color: #ffffff;
+  padding-top: 17px;
+}
+%cards_props {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-family: titilliumweb_regular, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  letter-spacing: 0.19px;
+  color: #ffffff;
+}
 section {
   .service_section {
     width: 100%;
     background-color: #17c2a4;
-    max-height: 747px;
-    height: 747px;//delete
+    padding-bottom: 123px;
     .headline_1 {
-      font-family: titilliumweb_semibold, sans-serif;
-      font-size: 39px;
-      line-height: 29px;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0 auto;
-      padding: 117px 0 23px 3px;
-      width: max-content;
-      font-kerning: none;
-      letter-spacing: 3.82px;
+      @extend %before_line;
     }
     .line {
-      width: 87px;
-      height: 4px;
-      opacity: 0.14;
-      background-color: #000000;
-      margin: 0 auto;
+      @extend %line;
 
     }
-    //.underline_text {
-    //  font-family: titilliumweb_regular, sans-serif;
-    //  font-size: 18px;
-    //  line-height: 26px;
-    //  font-weight: 400;
-    //  letter-spacing: 0.35px;
-    //  color: #ffffff;
-    //  width: max-content;
-    //  margin: 0 auto;
-    //  padding-top: 17px;
-    //
-    //  :first-child {
-    //    word-spacing: 0.5px;
-    //    padding-left: 3px;
-    //  }
-    //  :last-child {
-    //    margin: 0 auto;
-    //    display: block;
-    //    width: max-content;
-    //    padding-left: 5px;
-    //  }
-    //}
     .underline_text {
-      text-align: center;
-      font-family: titilliumweb_regular, sans-serif;
-      font-size: 18px;
-      line-height: 26px;
-      font-weight: 400;
-      letter-spacing: 0.35px;
-      color: #ffffff;
-      padding-top: 17px;
+      @extend  %after_line;
       :first-child {
         word-spacing: 0.5px;
         padding-left: 3px;
@@ -376,55 +375,124 @@ section {
         padding-left: 5px;
       }
     }
-    .for_service_cards {
-      max-width: 1447px;
-      margin: 0 auto;
-      padding: 82px 160px 0 160px;
+    .service_slider {
+      max-width: 1040px;
+      padding: 82px 0 0 0;
     }
+
+    @include service_cards(1, 120px, 124px, 11px, 0, 0, -39px, -1px, #ffffff);
+    @include service_cards(2, 90px, 131px, 10px, 0, -5px, -38px, -1px, #ffffff);
+    @include service_cards(3, 159px, 126px, 0, 10px, 0, -38px, -3px, #ffffff);
+    @include service_cards(4, 95px, 134px, 0, 6px, -4px, -33px, -3px, #ffffff);
+
+
     .service_cards {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      font-family: titilliumweb_regular, sans-serif;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      color: #ffffff;
-      :nth-child(2) {
-          font-size: 24px;
-          line-height: 18px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.02em;
-          color: #ffffff;
+      height: 300px;
+      @extend %cards_props;
+    }
+      .swiper-pagination {
+        position: relative;
+        min-width: 50px;
+        height: 15px;
+        margin: 30px auto 0 auto;
       }
-      &:nth-child(1) {
-        img {
-          padding-left: 11px;
-        }
+      .swiper-pagination-bullet {
+        @include size(12px, 12px);
+        margin: 0 10px;
       }
-      &:nth-child(2) {
-        img {
-          margin-top: -5px;
-          padding-left: 10px;
-        }
+      .swiper-pagination-bullet-active {
+        background: #0578b4;
       }
-      &:nth-child(3) {
-        img {
-          padding-right: 10px;
-        }
+    }
+
+}
+@media (max-width: 1099px) {
+  section {
+    .service_section {
+      .service_slider {
+        max-width: 700px;
       }
-      &:nth-child(4) {
-        img {
-          padding-right: 6px;
-          margin-top: -4px;
-        }
-      }
+      @include service_cards(3, 120px, 124px, 11px, 0, 0, -39px, -1px, #ffffff);
+      @include service_cards(1, 90px, 131px, 10px, 0, -5px, -38px, -1px, #ffffff);
+      @include service_cards(2, 159px, 126px, 0, 10px, 0, -38px, -3px, #ffffff);
+      @include service_cards(3, 95px, 134px, 0, 6px, -4px, -33px, -3px, #ffffff);
+
     }
   }
+}
+@media (max-width: 739px) {
+  section {
+    .service_section {
+      .service_slider {
+        max-width: 440px;
+      }
+      @include service_cards(3, 120px, 124px, 11px, 0, 0, -39px, -1px, #ffffff);
+      @include service_cards(4, 90px, 131px, 10px, 0, -5px, -38px, -1px, #ffffff);
+      @include service_cards(1, 159px, 126px, 0, 10px, 0, -38px, -3px, #ffffff);
+      @include service_cards(2, 95px, 134px, 0, 6px, -4px, -33px, -3px, #ffffff);
+    }
+  }
+}
+@media (max-width: 499px) {
+  section {
+    .service_section {
+      .headline_1 {
+        font-size: 23px;
+      }
+      .service_slider {
+        max-width: 200px;
+      }
+      @include service_cards(2, 120px, 124px, 11px, 0, 0, -39px, -1px, #ffffff);
+      @include service_cards(3, 90px, 131px, 10px, 0, -5px, -38px, -1px, #ffffff);
+      @include service_cards(4, 159px, 126px, 0, 10px, 0, -38px, -3px, #ffffff);
+      @include service_cards(1, 95px, 134px, 0, 6px, -4px, -33px, -3px, #ffffff);
 
+    }
+  }
+}
+
+section {
+  .team {
+    width: 100%;
+    background-color: #e7f1f8;
+    height: 914px;//del
+    .headline_1 {
+      @extend %before_line;
+      padding: 117px 0 25px 4px;
+      color: #3c4761;
+    }
+    .line {
+      @extend %line;
+    }
+    .underline_text {
+      @extend %after_line;
+      padding-top: 19px;
+      font-size: 18.2px;
+      letter-spacing: 0.2px;
+      word-spacing: 0.5px;
+      color: #3c4761;
+    }
+    .team_slider {
+      max-width: 1040px;
+      padding: 77px 0 0 0;
+    }
+    .team_cards {
+      img {
+        border-radius: 100%;
+      }
+      @extend %cards_props;
+      height: 430px;
+      width: 205px;
+      align-items: unset;
+    }
+
+    @for $i from 1 to 5 {
+      $size: $i * (200/$i);
+      @include service_cards(#{$i},#{$size}px,#{$size}px, 0, 0, 0, 0, 0, #27283d);
+      @include team(#{$i}, #30bae7);
+    }
+
+  }
 }
 
 
