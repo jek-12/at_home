@@ -412,7 +412,7 @@ section {
       .service_slider {
         max-width: 700px;
       }
-      @include service_cards(3, 120px, 124px, 11px, 0, 0, -39px, -1px, #ffffff);
+      @include service_cards(4, 120px, 124px, 11px, 0, 0, -39px, -1px, #ffffff);
       @include service_cards(1, 90px, 131px, 10px, 0, -5px, -38px, -1px, #ffffff);
       @include service_cards(2, 159px, 126px, 0, 10px, 0, -38px, -3px, #ffffff);
       @include service_cards(3, 95px, 134px, 0, 6px, -4px, -33px, -3px, #ffffff);
@@ -481,20 +481,84 @@ section {
         border-radius: 100%;
       }
       @extend %cards_props;
-      height: 430px;
+      height: 490px;
       width: 205px;
       align-items: unset;
-    }
+      .contact_links {
+        display: flex;
+        justify-content: space-between;
+        a {
+          @include size(32px,32px);
+          img {
+            @include size(32px,32px);
+          }
+        }
 
+
+      }
+    }
     @for $i from 1 to 5 {
       $size: $i * (200/$i);
       @include service_cards(#{$i},#{$size}px,#{$size}px, 0, 0, 0, 0, 0, #27283d);
-      @include team(#{$i}, #30bae7);
+      @include team(#{$i}, #30bae7, 0, 0 45px 0 40px, 1, 0 23px 0 19px);
     }
 
   }
 }
-
+@media (max-width: 1099px) {
+  section {
+    .team {
+      .team_slider {
+        max-width: 700px;
+      }
+      @for $i from 1 to 5 {
+        @include team(#{$i}, #30bae7, 0, 0 23px 0 19px, 1, 0 45px 0 40px);
+      }
+      //@for $i from 1 to 5 {
+      //  @include team1099(#{$i});
+      //}
+    }
+  }
+}
+@media (max-width: 739px) {
+  section {
+    .team {
+      .headline_1 {
+        font-size: 31px;
+      }
+      .team_slider {
+        max-width: 440px;
+      }
+      @for $i from 1 to 5 {
+        @include team(#{$i}, #30bae7, 0, 0 45px 0 40px, 1, 0 23px 0 19px);
+      }
+    }
+  }
+}
+@media (max-width: 499px) {
+  section {
+    .team {
+      .headline_1 {
+        font-size: 20px;
+      }
+      .team_slider {
+        max-width: 200px;
+      }
+      @for $i from 1 to 5 {
+        @include team(#{$i}, #30bae7, 0, 0 23px 0 19px, 1, 0 45px 0 40px);
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  section {
+    .team {
+      .headline_1 {
+        font-size: 17px;
+      }
+    }
+  }
+}
 
 
 //.margin_l_r {

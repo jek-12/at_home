@@ -40,15 +40,16 @@
 @mixin service_cards($num, $img_w, $img_h, $pad_left, $pad_right, $marg_t, $marg_b, $margin_l_text, $color) {
   .swiper-slide {
     &:nth-child(4n+#{$num}) {
-      img {
-        width: $img_w;
-        height: $img_h;
-        padding-left: $pad_left;
-        padding-right: $pad_right;
-        margin-top: $marg_t;
-        box-sizing: content-box;
-      }
-      :nth-child(2) {
+        img {
+          width: $img_w;
+          height: $img_h;
+          padding-left: $pad_left;
+          padding-right: $pad_right;
+          margin-top: $marg_t;
+          box-sizing: content-box;
+        }
+
+        span:nth-child(2) {
           font-size: 24px;
           line-height: 18px;
           font-weight: 700;
@@ -57,22 +58,112 @@
           color: $color;
           margin-bottom: $marg_b;
           margin-left: $margin_l_text;
+        }
+
+        span:nth-child(3) {
+          margin-bottom: 4px;
+        }
+
+        span:nth-child(4) {
+          color: #3c4761;
+        }
       }
-      :nth-child(3) {
-        margin-bottom: 4px;
-      }
-      :nth-child(4) {
-        color: #3c4761;
-      }
-    }
   }
 }
-@mixin team($num, $color) {
+@mixin team($num, $color, $num_1, $padding_1, $num_2, $padding_2) {
   .swiper-slide {
     &:nth-child(4n+#{$num}) {
-      :nth-child(3) {
-        color: $color;
+      :nth-child(1) {
+        span:nth-child(2) {
+          margin-bottom: -31px;
+          padding-right: 6px;
+          letter-spacing: 0.014em;
+        }
+        span:nth-child(3) {
+          color: $color;
+          margin-bottom: -23px; //3
+          letter-spacing: 0.62px;
+          margin-right: 2px;
+        }
+        span:nth-child(4) {
+          line-height: 23px;
+          margin-bottom: 1px;
+          margin-right: 4px;
+          margin-top: 3px; //-9
+          letter-spacing: 0.21px
+        }
+      }
+      &:nth-child(2n+#{$num_1}) {
+        div:nth-child(5) {
+          padding: $padding_1;
+          #icon_marg {
+            margin-left: 1px;
+          }
+        }
+      }
+      &:nth-child(2n+#{$num_2}) {
+        div:nth-child(5) {
+          padding: $padding_2;
+          #icon_marg {
+            margin-left: 1px;
+          }
+        }
       }
     }
   }
 }
+//@mixin team($num, $color) {
+//  .swiper-slide {
+//    &:nth-child(4n+#{$num}) {
+//      :nth-child(1) {
+//          span:nth-child(2) {
+//            margin-bottom: -31px;
+//            padding-right: 6px;
+//            letter-spacing: 0.014em;
+//          }
+//          span:nth-child(3) {
+//            color: $color;
+//            margin-bottom: -23px; //3
+//            letter-spacing: 0.62px;
+//            margin-right: 2px;
+//          }
+//          span:nth-child(4) {
+//            line-height: 23px;
+//            margin-bottom: 1px;
+//            margin-right: 4px;
+//            margin-top: 3px; //-9
+//            letter-spacing: 0.21px
+//          }
+//      }
+//      &:nth-child(2n) {
+//        div:nth-child(5) {
+//          padding: 0 45px 0 40px;
+//          #icon_marg {
+//            margin-left: 1px;
+//          }
+//        }
+//      }
+//      &:nth-child(2n+1) {
+//        div:nth-child(5) {
+//          padding: 0 23px 0 19px;
+//        }
+//      }
+//    }
+//  }
+//}
+//@mixin team1099($num) {
+//  .swiper-slide {
+//    &:nth-child(4n+#{$num}) {
+//      :nth-child(1) {
+//        &:nth-child(2n+1) {
+//          div:nth-child(5) {
+//            padding: 0 32px 0 19px;
+//            #icon_marg {
+//              margin-left: 1px;
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}

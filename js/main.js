@@ -21,7 +21,6 @@ $.scrollify({
 
     },
     after: function() {
-        console.log(swap);
     if(swap === 0) {
         let nav_menu_icon = $(".nav_box");
         let nav_menu_inside = $(".nav_box span");
@@ -40,11 +39,6 @@ $.scrollify({
             });
         swap++;
     }
-
-
-
-
-
     },
     afterResize:function() {},
     afterRender:function() {
